@@ -9,7 +9,7 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
     opts = {
-      ensure_installed = { "lua_ls", "pylsp", "clangd", "jsonls", "gopls" },
+      ensure_installed = { "lua_ls", "pylsp", "clangd", "jsonls", "gopls", "ts_ls", "html", },
       automatic_installation = false, -- optional
     },
   },
@@ -30,7 +30,7 @@ return {
       end
 
       -- Setup servers
-      for _, server in ipairs({ "lua_ls", "clangd", "pylsp", "jsonls", "gopls" }) do
+      for _, server in ipairs({ "lua_ls", "clangd", "pylsp", "jsonls", "gopls", "ts_ls", "html", }) do
         lspconfig[server].setup({
           capabilities = capabilities,
           on_attach = on_attach,
