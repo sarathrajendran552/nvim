@@ -1,13 +1,19 @@
 return {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    config = function()
-        local config = require("nvim-treesitter.configs")
-        config.setup({
-            ensure_installed = { "c", "lua", "json", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "html" },
-            sync_install = false,
-            highlight = { enable = true },
-            indent = { enable = true },
-        })
-    end
+  "nvim-treesitter/nvim-treesitter",
+  build = ":TSUpdate",
+  event = { "BufReadPost", "BufNewFile" },
+  cmd = { "TSInstall", "TSUpdate" },
+  config = function()
+    require("nvim-treesitter.configs").setup({
+      ensure_installed = {
+        "c", "lua", "vim", "vimdoc", "query",
+        "python", "go", "bash", "json", "yaml",
+        "javascript", "html", "css", "markdown",
+      },
+      auto_install = false,
+      sync_install = false,
+      highlight = { enable = true },
+      indent = { enable = true },
+    })
+  end,
 }
