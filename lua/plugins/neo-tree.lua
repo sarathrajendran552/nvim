@@ -8,7 +8,6 @@ return {
   },
   keys = {
     { "<C-n>", "<cmd>Neotree toggle<CR>", desc = "Toggle file tree" },
-    { "<leader>e", "<cmd>Neotree toggle<CR>", desc = "Toggle file tree" },
   },
   opts = {
     close_if_last_window = true,
