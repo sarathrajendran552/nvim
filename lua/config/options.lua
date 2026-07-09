@@ -17,3 +17,8 @@ vim.o.smartcase = true
 vim.o.updatetime = 250
 vim.o.signcolumn = "yes"
 vim.o.timeoutlen = 300
+
+vim.o.autocomplete = true
+vim.o.pumborder = "rounded"
+vim.o.pummaxwidth = 40
+vim.o.completeopt = "menu,menuone,noselect,nearest"
